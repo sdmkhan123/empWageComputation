@@ -4,8 +4,8 @@ IS_PRESENT_FULL_TIME=1
 IS_PRESENT_PART_TIME=2
 MAX_WORK_HR=100
 EMP_RATE_HR=20
-MAX_WORKING_DAYS=20
-totalWorkHr=0
+MX_WORKING_DAYS=20
+totalWorkingHr=0
 day=1
 
 function getWorkHr(){
@@ -27,7 +27,7 @@ do
 	empHr="$( getWorkHr $empCheck )"
 	totalWorkHr=$(( totalWorkHr + empHr ))
 	Dailywage=$(( empHr * EMP_RATE_HR ))
-	echo $Dailywage
+	echo "at day $day the wage is:" $Dailywage
 	((day++))
 done
 TotalyWage=$(( totalWorkHr * EMP_RATE_HR ))
