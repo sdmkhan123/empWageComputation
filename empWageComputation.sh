@@ -1,22 +1,13 @@
-#! /bin/bash
-FullTime=1
-PartTime=2
-NotPresent=0
-Wage_per_Hr=20
-echo "Welcome in Main Branch"
-a=$((RANDOM%3))
-if [ $a -eq 1 ]
-then
-	echo "present"
-	empHr=8
-	dailyWage=$(( $Wage_per_Hr * $empHr ))
-elif [ $a -eq 2 ]
-then
-	echo "Part Time Present"
-	empHr=8
-	empWage=$(( $Wage_per_Hr * $empHr))
-else
-	echo "Not Present"
-	empHr=0
-	dailyWage=0
-fi
+#! /bin/bash -x
+
+IS_PRESENT_FULL_TIME=1
+IS_PRESENT_PART_TIME=2
+empCheck=$((RANDOM%2))
+case $empCheck in
+	$IS_PRESENT_FULL_TIME)
+		echo "FUll Time Present";;
+	$IS_PRESENT_PART_TIME)
+		echo "Half Time Present";;
+	*)
+		echo "Not Present";;
+esac
