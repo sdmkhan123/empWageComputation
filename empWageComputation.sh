@@ -21,13 +21,14 @@ function getWorkHr(){
         esac
 	echo $empHr
 }
-
 while [ $day -le $MX_WORKING_DAYS ] && [ $totalWorkingHr -lt  $MAX_WORK_HR ]
 do
 	empCheck=$((RANDOM%3))
 	empHr="$( getWorkHr $empCheck )"
 	totalWorkHr=$(( totalWorkHr + empHr ))
+	Dailywage=$(( empHr * EMP_RATE_HR ))
+	echo $Dailywage
 	((day++))
 done
-# MonthlyWage=$(( totalWorkHr * EMP_RATE_HR ))
-echo $totalWorkHr
+TotalyWage=$(( totalWorkHr * EMP_RATE_HR ))
+echo $TotalyWage
