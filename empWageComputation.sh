@@ -2,7 +2,7 @@
 
 IS_PRESENT_FULL_TIME=1
 IS_PRESENT_PART_TIME=2
-empCheck=$((RANDOM%2))
+empCheck=$((RANDOM%3))
 case $empCheck in
 	$IS_PRESENT_FULL_TIME)
 		echo "FUll Time Present";;
