@@ -4,7 +4,7 @@ IS_PRESENT_FULL_TIME=1
 IS_PRESENT_PART_TIME=2
 MAX_WORK_HR=100
 EMP_RATE_HR=20
-MAX_WORKING_DAYS=20
+MX_WORKING_DAYS=20
 totalWorkHr=0
 day=1
 
@@ -22,7 +22,7 @@ function getWorkHr(){
 	echo $empHr
 }
 
-while [ $day -le $MX_WORKING_DAYS ] && [ $totalWorkingHr -lt  $MAX_WORK_HR ]
+while [ $day -le $MX_WORKING_DAYS ] && [ $totalWorkHr -lt  $MAX_WORK_HR ]
 do
 	empCheck=$((RANDOM%3))
 	empHr="$( getWorkHr $empCheck )"
